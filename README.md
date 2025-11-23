@@ -60,7 +60,7 @@ randomNumber = generateRandomNumber(MAX_VALUE);
 }
 ```
 
-### Code Logic and Flow
+### 2. Code Logic and Flow
 
 The positive side that we understand from the game code is that the game gives correct response to the user’s guesses as we can see from the following section of the JS code of the game:
 
@@ -76,7 +76,7 @@ This helps for:
 
 #### There is no major logical weakness here in the code.
 
-### 2. Input Validation
+### 3. Input Validation
 
 The major problem that we observed in the code under input validation is that the code doesn’t check whether the user entered a number inside the valid range (1-100).
 
@@ -96,7 +96,7 @@ if (userGuess < 1 || userGuess > 100) {
 
 Solving these issue helps to prevent invalid inputs from entering to the game flow
 
-### 3. Replayability
+### 4. Replayability
 
 The game allows for players to play again if they win or lose the game, this improves the level of user experience. Instead of refreshing the page everytime the game ends the game resets properly.
 
@@ -125,7 +125,7 @@ resetButton.classList.add("reset-btn");
 document.body.appendChild(resetButton);
 ```
 
-### 4. User Experience
+### 5. User Experience
 From the user experience view we found the game as good on informing the player that their guesses are too high/ too low or correct, and the game also displays clear message when the game is over and when they win. And the background color changes on result to make feedback visual by including the following JS code line:
 ```javascript
 lastResult.style.backgroundColor = "green";
@@ -140,7 +140,7 @@ lowOrHi.textContent += ` — You have ${10 - guessCount} guesses remaining.`;
 
 -	Showing the actual answer when the game ends. 
 
-### 5. Use of Constants
+### 6. Use of Constants
 The code works perfectly but it uses hardcoded values (also called magic numbers) such as:
 ```javascript
 Math.random() * 100
@@ -152,7 +152,7 @@ const MAX_VALUE = 100;
 const MAX_ATTEMPTS = 10;
 let randomNumber = Math.floor(Math.random() * MAX_VALUE) + 1;
 ```
-### 6. Efficiency
+### 7. Efficiency
 When we observe the code efficiency there were no unnecessary loops, DOM lookups are stored in variables and the game logic runs only when it is needed which makes it more efficient. 
 
 But we give minor suggestion that can be added, which is that instead of rebuilding the entire guess history string each time which uses the following JS code line:
